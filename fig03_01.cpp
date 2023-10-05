@@ -1,3 +1,14 @@
+/**
+ * @file fig03_01.cpp
+ * @author your name (you@domain.com)
+ * @brief decision making equality and relational operator.
+ * @version 0.1
+ * @date 2023-10-05
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
 #include<iostream> // enables program to perform input and output 
 
 using std::cout; // program uses cout
