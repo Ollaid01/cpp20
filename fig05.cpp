@@ -23,5 +23,8 @@ int main() {
         cout << "Failed" << endl;
     }
 
+    // conditional operator
+    cout << "Check using conditional operator : " << (studentGrade > 10 ? "Passed" : "Failed") << endl;
+
     return 0;
 }
