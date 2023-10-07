@@ -17,15 +17,16 @@ int main() {
     // grades of stdudents
     int totalStudent{10};
     int sumGrades{0};
-    int gradesAverage{0};
-    int studentGrade{0};
 
     // get all grades from user prompt data
-    int gradeNumber{1};
-    while(gradeNumber <= totalStudent) 
+    int gradeCounter{1};
+    while(gradeCounter <= totalStudent) 
     {
         // ask grade of student
-        cout << "Enter grade of student " << gradeNumber << " : ";
+        cout << "Enter grade of student " << gradeCounter << " : ";
+
+        // local variable (scope - only used in while loop)
+        int studentGrade{0};
 
         // input each grade
         cin >> studentGrade;
@@ -37,11 +38,12 @@ int main() {
             sumGrades = sumGrades + studentGrade;
 
             // inrement number of grades entered
-            gradeNumber = gradeNumber + 1;
+            gradeCounter = gradeCounter + 1;
         }
     }
 
     // perform the averaging calculation
+    int gradesAverage{0};
     gradesAverage = sumGrades / totalStudent;
 
     // print result
