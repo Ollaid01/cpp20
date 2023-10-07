@@ -1,3 +1,13 @@
+/**
+ * @file sentinel_controlled_iteration.cpp
+ * @author ollaid Mat
+ * @brief sentinel-controlled iteration
+ * @version 0.1
+ * @date 2023-10-08
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 using namespace std;
 
