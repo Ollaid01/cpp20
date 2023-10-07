@@ -9,6 +9,8 @@
  * 
  */
 #include <iostream>
+#include <iomanip>
+
 using namespace std;
 
 int main() {
@@ -16,8 +18,8 @@ int main() {
     int totalGrades{0};
 
     // counter
-    int counterGrades{0};
-    while (counterGrades != -1)
+    int gradesCounter{0};
+    while (gradesCounter != -1)
     {
         // get grade from user prompt
         int grade{0};
@@ -31,7 +33,7 @@ int main() {
             totalGrades = totalGrades + grade;
 
             // incremente interationGrade
-            counterGrades = counterGrades + 1;
+            gradesCounter = gradesCounter + 1;
         }
         else if(grade == -1) // quit if grade input equal -1
         {
@@ -43,7 +45,16 @@ int main() {
     cout << "Total of grades : " << totalGrades << endl;
 
     // avoid divide by 0 an getting floatting point exception
-    cout << "Average of student : " << (counterGrades > 0 ? (totalGrades / counterGrades) : totalGrades) << endl;
+    if (gradesCounter != 0) {
+        double average{static_cast<double> (totalGrades) / gradesCounter};
+        // io stream manipulator for fixed point scientif notation for 
+        // display average value with 2 decimal
+        cout << setprecision(2) << fixed;
+        cout << "Average of student : " << average << endl;
+    }
+    else {
+        cout << "No grades were entered " << endl;
+    }
     
     return 0;
 }
