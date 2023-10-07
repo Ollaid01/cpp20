@@ -43,8 +43,7 @@ int main() {
     }
 
     // perform the averaging calculation
-    int gradesAverage{0};
-    gradesAverage = sumGrades / totalStudent;
+    int gradesAverage{sumGrades / totalStudent};
 
     // print result
     cout << "The class average is : " << gradesAverage << endl;
