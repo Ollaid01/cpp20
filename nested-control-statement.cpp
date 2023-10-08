@@ -42,7 +42,7 @@ int main() {
     cout << "Passed: " << passes << "\nFailed: " << failures << endl;
 
     // determine whether more than 8 students passed
-    if (passes > 8)
+    if (passes >= 7)
         cout << "Bonus to instructor !"  << endl;
 
     return 0;
