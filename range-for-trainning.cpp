@@ -32,5 +32,30 @@ int main() {
         cout << "Item : " << item << " | Total : " << total << endl;
     }
 
+    cout << "======= double ========" << endl;
+
+    // double values
+    array items{1.1, 2.2, 3.3, 4.4, 5.5};
+
+    // before modification: display values
+    for (const double& item : items) {
+        cout << " item : " << item << endl;
+    }
+
+    // modification: 
+    for (double& item : items) {
+        item *= 3.1;
+    }
+
+    // after modification
+    for (const double& item : items) {
+        cout << "item : " << item << endl;
+    }
+
+    for(double total{0}; const double& item: items) {
+        total += item;
+        cout << "Total running is : " << total << endl;
+    }
+
     return 0;
 }
