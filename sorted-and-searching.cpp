@@ -13,18 +13,23 @@ int main() {
     array colors{"red"s, "orange"s, "yellow"s, "green"s, "blue"s, "indigo"s, "violet"s};
 
     // dislay original array : using range-based-for  (internal iteration)
+    cout << "Unsorted colors array : " << endl;
     for(const string& color : colors) {
         cout << color << " ";
     }
 
     cout << "\n ==== " << endl;
 
-    // output array using external iteration
-    for(size_t i{0}; i < colors.size(); ++i) {
-        cout << colors.at(i) << endl;
+    // sort content of colors array
+    sort(begin(colors), end(colors));
+
+    // print content of colors sorted
+    cout << "Sorted colors array : \n";
+    for(const string& color : colors) {
+        cout << color << " "; 
     }
 
-    cout << "\n" ;
+    cout << "\n";
 
     return 0;
 }
