@@ -29,7 +29,23 @@ int main() {
         cout << color << " "; 
     }
 
+    cout << "\n ==== " << endl;
+
+
+    // search string colors array
+    // search for 'indigo' in colors
+    bool found{binary_search(begin(colors), end(colors), "indigo")};
+
+    //
+    cout << (found ? "indigo was in colors" : "indigo was not in colors") << endl; 
+
     cout << "\n";
+
+    // search cyan string in colors
+    bool foundCyan{binary_search(begin(colors), end(colors), "cyan")};
+    cout << " cyan " << (foundCyan ? " was in " : " was not in ") << " in colors " << endl;
+
+    cout << "\n ======= \n ";
 
     return 0;
 }
