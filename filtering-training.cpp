@@ -5,6 +5,10 @@
 
 using namespace std;
 
+int multiply(const int& x, const int& y) {
+    return x * y;
+}
+
 int main() {
 
     constexpr size_t array_size{5};
@@ -35,6 +39,21 @@ int main() {
     auto square_values = values | views::transform([](const auto& x){return x*x;});
     showValues(square_values, "Mapping even integers to square ");
 
+    // using accummulate to perform sum of integers
+    cout << "The product of values is : " << accumulate(begin(values), end(values), 1, multiply) << endl;  
+
+    // using accumulate to perform sum of integers array
+    cout << "The sum of integers is : " << accumulate(begin(values), end(values), 0) << endl;
+
+    // perform product using lambda experession
+    cout << "[lambda] The product is : " << accumulate(begin(values), end(values), 1, 
+                [](const auto& x, const auto& y){return x * y;}) << endl;
+
+    // combine filter and map to perform square even integers
+    auto result = 
+                values | views::filter([](const auto& x){return x % 2 == 0;})
+                       | views::transform([](const auto& x){return x * x;});
+    showValues(result, "Combine filter and tranform to get squares of integers ");
 
     return 0;
 }
