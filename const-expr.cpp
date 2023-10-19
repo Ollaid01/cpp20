@@ -18,7 +18,7 @@ int main() {
 
     // using external iteration for initialize array items
     for(int i{0}; i < items.size(); ++i) {
-        items.at(i) = 2 + 2 + i;
+        items.at(i) = 2 + 2 * i;
     }
 
     // after modification : using range-based-for to print element of array items
