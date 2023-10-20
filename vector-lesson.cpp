@@ -34,6 +34,9 @@ int main() {
     cout << "integer 3 : ";
     output_vector(integers3);
 
+    // compare vectors with ==
+    cout << (integers1 == integers2 ? "Vectors equeals" : "Vectors differents") << endl;
+
     cout << endl;
 
     return 0;
