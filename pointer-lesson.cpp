@@ -4,12 +4,19 @@ using namespace std;
 
 int main() {
 
-    int count{7};
-    cout << "The value of count variable: " << count << endl;
+    // declare and initialize integer
+    constexpr int count{5};
 
-    // create pointer to int and initialize it to null
-    int* countPtr{nullptr};
-    cout << "The value of countPtr is : " << countPtr << endl;
+    // declare int pointer and initialize it to nullptr
+    const int* countPtr{&count};
+
+    // print pointer
+    cout << "the adress of count is : " << &count 
+         << "\n the value of count is : " << count
+         << "\n\n the value of countPtr is : " << countPtr 
+         << "\n the value of *countPtr is : " << *countPtr << endl;
+
+    // set pointer to 
 
     return 0;
 }
