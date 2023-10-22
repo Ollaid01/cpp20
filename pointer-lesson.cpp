@@ -2,21 +2,30 @@
 
 using namespace std;
 
+void cubeByPtr(int* param) {
+    *param = 3 * *param ;
+}
+
+void cubeByRef(int& param) {
+    param =  param * param * param;
+}
+
+int cubeByValue(int param) {
+    return param * param * param;
+}
+
 int main() {
 
     // declare and initialize integer
-    constexpr int count{5};
+    int number{8};
 
     // declare int pointer and initialize it to nullptr
-    const int* countPtr{&count};
-
-    // print pointer
-    cout << "the adress of count is : " << &count 
-         << "\n the value of count is : " << count
-         << "\n\n the value of countPtr is : " << countPtr 
-         << "\n the value of *countPtr is : " << *countPtr << endl;
-
-    // set pointer to 
+    cout << "Cube is : " << number <<endl;
+    cout << "Cube by value : " << cubeByValue(number) << endl;
+    cubeByRef(number);
+    cout << "Cube by Ref : " <<  number << endl;
+    cubeByPtr(&number);
+    cout << "Cube by Pointer : " << number << endl;
 
     return 0;
 }
