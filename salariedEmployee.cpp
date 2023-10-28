@@ -33,5 +33,5 @@ double SalariedEmployee::earnings() const { return getSalary(); }
 
 // return string representation of salariedEmployee object
 string SalariedEmployee::toString() const {
-    return  "Name : " + getName() + " \n"; // FIX ME
+    return fmt::format("Name: {}\nSalary: ${:.2f}\n", getName(), getSalary());
 }

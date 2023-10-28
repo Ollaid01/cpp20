@@ -1,25 +1,30 @@
+/**
+ * @file pointer-training.cpp
+ * @author mat ollaid
+ * @brief using constant pointer
+ * @version 0.1
+ * @date 2023-10-23
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include <iostream>
 
 using namespace std;
 
 int main() {
 
-    // attempt to modify data througth a non-constant pointer to constant data
+    int x{2}, y{10};
+    cout << "x : " << x << " and y : " << y << endl;
 
-    int y{21};
-    int z{9};
-    const int* yPtr{&y};
+    // ptr is constant pointer to an integer that can  be modified through ptr
+    // ptr always point to the same memory location
+    int* const ptr{&x};
 
-    cout << "y : " << y << endl;
-    cout << "y ptr : " << yPtr << endl;
-    cout << "* yPtr : " << *yPtr << endl;
+    *ptr = 20;
+    cout << "x : " << x << " and *ptr : " << *ptr << endl; 
 
-    yPtr = &z;
-    cout << "y ptr : " << yPtr << endl;
-    cout << "* yPtr : " << *yPtr << endl;
-
-    *yPtr = 99;
-
+    ptr = &y; // cannot do this
 
     return 0;
 }
