@@ -19,12 +19,14 @@ int main(int argc, char* argv[]) {
 
     cout << "========= \n Natural Pointer \n========= " << endl;
 
-    // natural : aims based class pointer at based class object
-    SalariedEmployee* salariedPtr{&employee};
+    // natural : aim a base-class pointer at derived-class object
+    SalariedEmployee* salariedPtr{&employee2};
     cout << fmt::format("Name (Ptr) : {}", salariedPtr->getName()) << endl;
     salariedPtr->setName("Roxane M");
     cout << fmt::format("Name (Ptr) : {}", salariedPtr->getName()) << endl;
     cout << salariedPtr->toString() << endl;
+
+    // Not allowed: a derived-class pointer at baed-class object
 
 
     return 0;
