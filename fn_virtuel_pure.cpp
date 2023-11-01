@@ -3,13 +3,13 @@
 class Animal {
 
     public:
-        virtual void speak() = 0; // functionn virtuel pure qui fait Animal devient automatiquement abstraite
+        virtual void speak() const = 0; // functionn virtuel pure qui fait Animal devient automatiquement abstraite
 };
 
 class Chien : public Animal {
 
     public:
-    void speak() override {
+    void speak() const override {
         std::cout << "Woof!" << std::endl;
     }
 };
@@ -17,7 +17,7 @@ class Chien : public Animal {
 class Chat: public Animal {
 
     public:
-    void speak() override {
+    void speak() const override {
         std::cout << "Meow Meow !" << std::endl;
     }
 };

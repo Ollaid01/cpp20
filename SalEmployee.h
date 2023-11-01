@@ -7,6 +7,7 @@
 using namespace std;
 
 class SalEmployee {
+    
 public:
     SalEmployee(string_view name, double salary);
 
