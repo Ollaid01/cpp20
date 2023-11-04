@@ -38,6 +38,12 @@ int main(int argc, char* argv[]) {
 
     // interact with Integer ptr by usign a unique_ptr to call an Integer member function
     cout << "Integer value : " << ptr->get_value() << " \n Main ends " << endl;
-    
+
+    // unique_ptr -  erreur de copie  - une seule instance de unique_ptr peut detenir cette ressource a la fois
+    unique_ptr<int> p1(new int(15));
+    // unique_ptr<int> p2 = p1; // Erreur de copie  - la copie est interdite
+    unique_ptr<int> p3 = move(p1); // transfert de propriete
+    cout << "Unique ptr - p3 : " << *p3 << endl;
+
     return 0;
 }
