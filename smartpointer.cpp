@@ -57,6 +57,11 @@ int main(int argc, char* argv[]) {
     shared_ptr<int> sp2 = sp1; // copie ou partage valide OK
     cout << "partage de la ressource de sp1 avec sp2 : " << *sp2 << endl;
 
+    // using make_shared
+    auto msptr{make_shared<int>(100)};
+    msptr = sp1;
+    cout << fmt::format("msptr : {} | sp1 : {} ", *msptr, *sp1) << endl;
+
 
     return 0;
 }
