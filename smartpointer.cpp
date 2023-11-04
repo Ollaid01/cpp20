@@ -45,5 +45,10 @@ int main(int argc, char* argv[]) {
     unique_ptr<int> p3 = move(p1); // transfert de propriete
     cout << "Unique ptr - p3 : " << *p3 << endl;
 
+    unique_ptr<int> p4(new int(20));
+    unique_ptr<double> p5(new double(10.2));
+    auto int_ptr{make_unique<int>(22)};
+    cout << "make unique int ptr int_pt : " << *int_ptr << endl;
+
     return 0;
 }
