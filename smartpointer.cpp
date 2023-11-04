@@ -50,5 +50,13 @@ int main(int argc, char* argv[]) {
     auto int_ptr{make_unique<int>(22)};
     cout << "make unique int ptr int_pt : " << *int_ptr << endl;
 
+    // using shared_ptr : propriétés partagé d'une ressource, plusierurs shared_ptr peuvent detenir la meme ressource
+    shared_ptr<int> sp1(new int(50));
+    cout << "shared ptr sp1 = " << *sp1 << endl;
+    // copie ou partage de la ressource de sp1 avec sp2
+    shared_ptr<int> sp2 = sp1; // copie ou partage valide OK
+    cout << "partage de la ressource de sp1 avec sp2 : " << *sp2 << endl;
+
+
     return 0;
 }
